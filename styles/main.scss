@@ -1,0 +1,203 @@
+// Fonts
+@import 'typography';
+
+// Start animation
+@import 'animation';
+
+// General Styles
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.v-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+.in-view {
+  opacity: 1 !important;
+}
+
+a {
+  color: #fff;
+}
+
+// Body
+body {
+  overflow: hidden;
+}
+
+// Main
+main {
+  width: calc(12226px + 70vw);
+  height: 100vh;
+  background: #000 url('../images/background.jpg') left bottom no-repeat;
+}
+
+// Main Slides
+.slides {
+  width: 100%;
+  position: relative;
+  list-style: none;
+  display: flex;
+
+  li {
+    position: fixed;
+    padding: 1.5rem 4rem;
+    height: 100vh;
+    transition: 500ms linear;
+    opacity: 0;
+
+    span {
+      display: block;
+    }
+    h2 {
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: normal;
+      font-size: 4rem;
+      line-height: 1.1;
+      position: relative;
+      top: 30%;
+    }
+  }
+
+  #slide-0 {
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 15vh;
+    h2 {
+      top: 0;
+      align-self: flex-start;
+    }
+    p {
+      align-self: flex-start;
+      margin: 0;
+    }
+  }
+
+  #slide-3,
+  #slide-4,
+  #slide-5 {
+    right: 0;
+    text-align: right;
+  }
+
+  #slide-9 {
+    margin-left: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    right: 0;
+    text-align: right;
+    h2 {
+      top: 0;
+      align-self: flex-start;
+    }
+    p {
+      align-self: flex-start;
+      margin: 0;
+      padding-bottom: 3rem;
+    }
+    .links {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        text-decoration: none;
+      }
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg)
+          brightness(111%) contrast(101%);
+        height: 50px;
+        height: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 1.5rem;
+  display: flex;
+  list-style: none;
+  li {
+    cursor: pointer;
+    border: dashed 1px #fff;
+    min-width: 2rem;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    &.selected::after {
+      content: '';
+      display: block;
+      width: 80%;
+      height: 80%;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  p {
+    align-self: center;
+    margin-left: 2rem;
+  }
+}
+
+// Controls
+.controls {
+  position: fixed;
+  top: 30%;
+  img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg)
+      brightness(111%) contrast(101%);
+    height: 50px;
+  }
+  &__left,
+  &__right {
+    position: fixed;
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__right {
+    right: 0;
+  }
+}
+
+// MediaMonks logo
+.logo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(92deg)
+    brightness(111%) contrast(101%);
+  margin: 0 1rem;
+  width: 100px;
+}
